@@ -20,5 +20,40 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans);
+  background-image: 
+    radial-gradient(circle at 1px 1px, #e5e5e5 1px, transparent 0),
+    radial-gradient(circle at 1px 1px, #e5e5e5 1px, transparent 0);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-image: 
+      radial-gradient(circle at 1px 1px, #262626 1px, transparent 0),
+      radial-gradient(circle at 1px 1px, #262626 1px, transparent 0);
+  }
+}
+
+/* Modernes Hover-Animation für Links */
+a {
+  position: relative;
+  text-decoration: none;
+}
+
+a:hover:before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  animation: underline 0.3s ease-out;
+}
+
+@keyframes underline {
+  from { transform: scaleX(0) }
+  to { transform: scaleX(1) }
 }
