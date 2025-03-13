@@ -26,11 +26,6 @@ export default function Home() {
       <header className="mb-20 md:mb-32">
         <nav className="flex justify-between items-center mb-16">
           <span className="text-xl font-bold">Kevin Kaize Wu</span>
-          <div className="flex gap-6">
-            <a href="#projects" className="hover:text-gray-500 transition">Projekte</a>
-            <a href="#about" className="hover:text-gray-500 transition">Über mich</a>
-            <a href="#contact" className="hover:text-gray-500 transition">Kontakt</a>
-          </div>
         </nav>
         <div className="text-center md:text-left">
           <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-500 bg-clip-text text-transparent">
