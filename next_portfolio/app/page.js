@@ -3,19 +3,23 @@ import Image from "next/image";
 const projects = [
   {
     title: "Geschichtsprojekt: The Great Depression",
-    description: "Interaktive Lernwebsite zur Weltwirtschaftskrise 1929 mit Zeitleiste und Quizmodul"
+    description: "Interaktive Lernwebsite zur Weltwirtschaftskrise 1929 mit Zeitleiste und Quizmodul",
+    image: "/tgd.jpg"
   },
   {
     title: "Raumreservationssystem",
-    description: "Fullstack-Lösung mit Next.js Frontend, Flask Backend und MySQL-Datenbank"
+    description: "Fullstack-Lösung mit Next.js Frontend, Flask Backend und MySQL-Datenbank",
+    image: "/raumreservationssystem.jpg"
   },
   {
     title: "Klassisches Snake-Spiel",
-    description: "Browserbasiertes Arcade-Spiel mit modernem UI-Design und Highscore-System"
+    description: "Browserbasiertes Arcade-Spiel mit modernem UI-Design und Highscore-System",
+    image: "/nka.jpg"
   },
   {
-    title: "Portfolio-Website",
-    description: "Moderne Webpräsenz mit Next.js, Tailwind CSS und responsivem Design"
+    title: "Task-Manager Website",
+    description: "Simple Task-Manager Website mit Angular und Spring Boot (JAVA)",
+    image: "/Task-manager.jpg"
   }
 ];
 
@@ -41,20 +45,20 @@ export default function Home() {
       <section id="projects" className="mb-20 md:mb-32">
         <h2 className="text-3xl font-bold mb-12">Ausgewählte Projekte</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <div key={project.title} className="group relative overflow-hidden rounded-2xl border border-gray-100 dark:border-gray-800 hover:border-gray-200 transition-all">
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              <Image
-                src={`/project-${index + 1}.jpg`}
-                alt={project.title}
-                width={600}
-                height={400}
-                className="transition-transform duration-300 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 p-6 flex items-end">
-                <div className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                  <p className="text-gray-300">{project.description}</p>
+        {projects.map((project, index) => (
+            <div key={project.title} className="group relative overflow-hidden rounded-2xl border border-gray-100 dark:border-gray-800 hover:border-gray-200 transition-all aspect-[3/2]">
+              <div className="relative w-full h-full">
+                <Image
+                  src={project.image || "/fallback.jpg"}
+                  alt={project.title}
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex items-end">
+                  <div className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm bg-black/30 p-4 rounded-lg w-full">
+                    <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                    <p className="text-gray-100">{project.description}</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -67,8 +71,8 @@ export default function Home() {
         <div className="flex flex-col md:flex-row gap-12 items-center">
           <div className="w-full md:w-1/3">
             <Image
-              src="/profile-placeholder.jpg"
-              alt="Profile"
+              src="/bild.jpg"
+              alt="Profilbild"
               width={400}
               height={500}
               className="rounded-xl"
