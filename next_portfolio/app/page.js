@@ -95,31 +95,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="mb-20">
-        <h2 className="text-3xl font-bold mb-12">Kontakt aufnehmen</h2>
-        <div className="max-w-2xl mx-auto">
-          <form className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <input 
-                type="text" 
-                placeholder="Name" 
-                className="p-4 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" 
-              />
-              <input type="email" placeholder="E-Mail" className="p-4 border rounded-lg" />
-            </div>
-            <textarea 
-              placeholder="Nachricht" 
-              rows="5" 
-              className="w-full p-4 border rounded-lg"
-            ></textarea>
-            <button className="w-full py-4 bg-black text-white rounded-lg hover:bg-gray-800 transition">
-              Absenden
-            </button>
-          </form>
-        </div>
-      </section>
     </div>
   );
 }
