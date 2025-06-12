@@ -25,14 +25,14 @@ const projects = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen p-8 sm:p-12 lg:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="min-h-screen p-8 sm:p-12 lg:p-20 font-[family-name:var(--font-gluten)]">
       {/* Hero Section */}
       <header className="mb-20 md:mb-32">
         <nav className="flex justify-between items-center mb-16">
           <span className="text-xl font-bold">Kevin Kaize Wu</span>
         </nav>
         <div className="text-center md:text-left">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-500 bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-500 bg-clip-text text-transparent font-[family-name:var(--font-gluten)]">
             Full-Stack Entwickler
           </h1>
           <p className="text-xl md:text-2xl text-gray-500 max-w-2xl">
@@ -43,7 +43,7 @@ export default function Home() {
 
       {/* Projects Grid */}
       <section id="projects" className="mb-20 md:mb-32">
-        <h2 className="text-3xl font-bold mb-12">Ausgewählte Projekte</h2>
+        <h2 className="text-3xl font-bold mb-12 font-[family-name:var(--font-gluten)]">Ausgewählte Projekte</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {projects.map((project, index) => (
             <div key={project.title} className="group relative overflow-hidden rounded-2xl border border-gray-100 dark:border-gray-800 hover:border-gray-200 transition-all aspect-[3/2]">
@@ -79,7 +79,7 @@ export default function Home() {
             />
           </div>
           <div className="w-full md:w-2/3">
-            <h2 className="text-3xl font-bold mb-6">Über mich</h2>
+            <h2 className="text-3xl font-bold mb-6 font-[family-name:var(--font-gluten)]">Über mich</h2>
             <p className="text-gray-500 text-lg leading-relaxed mb-6">
               Als angehender Informatiker an der IMS kombiniere ich technisches Know-how 
               mit gestalterischem Flair. Neben der Schule entwickle ich leidenschaftlich 
