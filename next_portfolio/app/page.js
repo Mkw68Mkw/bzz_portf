@@ -1,4 +1,7 @@
+"use client"
 import Image from "next/image";
+import Timeline from "../components/timeline";
+import { motion } from "framer-motion";
 
 const projects = [
   {
@@ -32,12 +35,57 @@ export default function Home() {
           <span className="text-xl font-bold">Kevin Kaize Wu</span>
         </nav>
         <div className="text-center md:text-left">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-500 bg-clip-text text-transparent font-[family-name:var(--font-gluten)]">
-            Full-Stack Entwickler
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-500 max-w-2xl">
+          <motion.h1
+            initial={{ opacity: 0 }}
+            animate={{ 
+              opacity: 1,
+              transition: { duration: 0.5 }
+            }}
+            className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-500 bg-clip-text text-transparent font-[family-name:var(--font-gluten)] overflow-hidden"
+          >
+            {"Full-Stack Entwickler".split("").map((char, index) => (
+              <motion.span
+                key={index}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{
+                  duration: 0.1,
+                  delay: index * 0.07 + 0.3
+                }}
+              >
+                {char}
+              </motion.span>
+            ))}
+            <motion.span
+              initial={{ opacity: 0 }}
+              animate={{ 
+                opacity: [0, 1, 0],
+                transition: {
+                  repeat: Infinity,
+                  duration: 0.8,
+                  delay: 2.5
+                }
+              }}
+              className="ml-1.5"
+            >
+              |
+            </motion.span>
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ 
+              opacity: 1,
+              y: 0,
+              transition: {
+                delay: 1.7,
+                duration: 0.5,
+                ease: "easeOut"
+              }
+            }}
+            className="text-xl md:text-2xl text-gray-500 max-w-2xl"
+          >
             Digitale Lösungen zwischen Code und Kreativität
-          </p>
+          </motion.p>
         </div>
       </header>
 
@@ -95,6 +143,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <Timeline></Timeline>
     </div>
   );
 }
