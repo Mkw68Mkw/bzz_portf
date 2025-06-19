@@ -62,11 +62,12 @@ export default function Home() {
                 opacity: [0, 1, 0],
                 transition: {
                   repeat: Infinity,
-                  duration: 0.8,
+                  duration: 1.2,
+                  ease: "easeInOut",
                   delay: 2.5
                 }
               }}
-              className="ml-1.5"
+              className="ml-1.5 text-gray-500"
             >
               |
             </motion.span>
